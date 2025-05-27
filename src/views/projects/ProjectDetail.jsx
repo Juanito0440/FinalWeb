@@ -96,6 +96,7 @@ export default function ProjectDetail() {
     formData.append('file', file);
 
     try {
+
       // Sube el archivo al backend y actualiza el estado
       const archivo = await subirArchivo(formData, id, e.target.name);
       setNewAdvance((prev) => ({
@@ -149,7 +150,7 @@ export default function ProjectDetail() {
 
   // Función para subir archivos al backend
   async function subirArchivo(formData, idProyecto, tipo) {
-    const res = await axios.post(`https://backusuarios-production.up.railway.app/upload/${idProyecto}?tipo=${tipo}`, formData, {
+    const res = await axios.post(`https://backfinalweb-production.up.railway.app/upload/${idProyecto}?tipo=${tipo}`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
