@@ -55,6 +55,8 @@ const Login = () => {
 
   // Envía los datos del formulario para iniciar sesión tradicional
   const onSubmit = () => {
+    console.log("Enviando datos de inicio de sesión:", body);
+    
     axios
       .post(`${BASE}/api/login`, body)
       .then(({ data }) => {
